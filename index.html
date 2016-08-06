@@ -1,47 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Rendom</title>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .currency {
+            color: red;
+        }
+        .rate {
+            color: green;
+        }
+    </style>
 </head>
 <body>
-
-	<ul>
-		<li>
-			<label for="name">IMIĘ</label>
-			<input type="text" id="name" placeholder="IMIĘ">
-		</li>
-		<li>
-			<label for="species">GATUNEK</label>
-			<input type="text" id="species" placeholder="GATUNEK">\
-		</li>
-		<li>
-			<label for="age">WIEK</label>
-			<input type="text" id="age" placeholder="WIEK">
-		</li>
-		<li>
-			<label for="owner">WŁAŚCICIEL</label>
-			<input type="text" id="owner" placeholder="WŁAŚCICIEL">
-		</li>
-	</ul>
-	<input type="button" id="add_animal" value="ADD NEW ANIMAL">
-
-	<table>
-		<thead>
-			<tr>
-				<th><span>L.P.</span></th>
-				<th><span>NAME</span></th>
-				<th><span>SPECIES</span></th>
-				<th><span>AGE</span></th>
-				<th><span>OWNER</span></th>
-			</tr>
-		</thead>
-
-		<tbody id="animals"></tbody>
-	</table>
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous">
-	</script>
-	<script type="text/javascript" src="app.js"></script>
-
+    <form>
+        <ul>
+            <li>
+                <label for="name">IMIĘ</label>
+                <input type="text" id="name" placeholder="IMIĘ">
+            </li>
+            <li>
+                <label for="species">GATUNEK</label>
+                <input type="text" id="species" placeholder="GATUNEK">
+            </li>
+            <li>
+                <label for="age">WIEK</label>
+                <input type="number" id="age" placeholder="WIEK">
+            </li>
+            <li>
+                <label for="owner">WŁAŚCICIEL</label>
+                <input type="text" id="owner" placeholder="WŁAŚCICIEL">
+            </li>
+        </ul>
+        <input type="button" id="add_animal" value="ADD NEW ANIMAL">
+    </form>
+    <p id="details"></p>
+    <p><strong>
+        ZWIERZĘTA!
+    </strong></p>
+    <table>
+        <thead>
+            <tr>
+                <th>IMIĘ</th>
+                <th>GATUNEK</th>
+                <th>INFO</th>
+            </tr>
+        </thead>
+        <tbody id="animals">
+        </tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
