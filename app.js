@@ -19,28 +19,48 @@ var main = function() {
     }
     function addAnimal(requestBody) {
         $.ajax({
-            url: apiUrl + '/animals',
+            url: apiUrl + '/animals' ,
             method: 'POST',
             data: requestBody
         }).then(function() {
             getAnimals();
         });
     }
+
+
+    function deleteAnimal(id) {
+        $.ajax({
+            url: apiUrl + '/animals/' +  id,
+            method: 'DELETE',
+        }).then(function(data) {
+            getAnimals();
+        });
+    }
+
     function printTable(animals) {
         $('#animals').empty();
         animals.forEach(function(animal) {
             var showDetailsButton = $('<button>SHOW DETAILS</button>').click(function(){
                 getOneAnimal(animal._id);
             });
+            var deleteButton = $('<button>DELETE ANIMAL</button>').click(function(){
+                deleteAnimal(animal._id);
+                });
+
+            
             $('#animals').append('<tr><td class="name">' + animal.name + 
                 '</td><td class="species">' + animal.species + '</td>' +
-                '</tr>').append(showDetailsButton);
+                '</tr>').append(showDetailsButton).append(deleteButton);
         });
     }
+    
     function showDetails(animal) {
         $('#details').text('IMIĘ: ' + animal.name + ' WŁAŚCICIEL: ' + animal.owner + ' WIEK: ' +
             animal.age + ' GATUNEK: ' + animal.species);
     }
+
+    
+    
     function getInputs () {
         var animal = {
             name: $('#name').val(),
