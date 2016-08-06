@@ -85,11 +85,18 @@ function showInputs(animal){
     
     updateAnimal(animal);
   });
+
+  var backButton = $('<button>CANCEL</button>').click(function(){
+    getOneAnimal(animal._id);
+  });
+
   $('#details').empty();
   $('#details').append('<p>IMIĘ: <input type="text" id="update_name"></p>');
   $('#details').append('<p>WIEK: <input type="number" id="update_age"></p>');
   $('#details').append('<p>WŁAŚCICIEL: <input type="text" id="update_owner"></p>');
   $('#details').append('<p>GATUNEK: <input type="text" id="update_species"></p>');
+  $('#details').append(backButton);
+
   $('#details').append(updateButton);
   $('#update_name').val(animal.name);
   $('#update_age').val(animal.age);
